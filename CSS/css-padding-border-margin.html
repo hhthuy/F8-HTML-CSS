@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuộc tính padding (đệm)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 60px;
+            height: 60px;
+            color: aliceblue;
+            /* Can giua */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box1 {
+            background-color: rgb(8, 7, 7);
+        }
+        .box2 {
+            background-color: rgb(231, 156, 15);
+        }
+        .box3 {
+            background-color: rgb(204, 37, 37);
+            padding: 8px 16px 8px 16px;/*top right bottom left  */
+            margin: 10px 20px 30px 40px;/* margin(khoảng cách lề) */
+            text-decoration: none;/* Bỏ gạch chân mặc định của thẻ a */
+            border: 5px solid rgb(67, 76, 160);
+            border-radius: 16px;
+
+        }
+        /* Thuộc tính box-sizing:  không bị thay đổi khi có border hoặc padding. */
+        .box-sizing {
+            width: 100px;
+            height: 100px;
+            color: aliceblue;
+            background-color: blueviolet;
+            padding: 16px;
+            border: 2px solid #333;
+            box-sizing: border-box;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box box1">Box 1</div>
+    <div class="box box2">Box 2</div>
+    <div class="box box3">Box 3</div>
+    <div class="box-sizing">Box-sizing</div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+/* External: Sử dụng file css bên ngoài link vào trang html */
+h1{ 
+    color: brown;
+    font-size: 30px;
+}
+
+
+/* ID & Class */
+/* #id */
+#first-heading{
+    color:darkcyan
+}
+
+/* .class*/
+.parent-heading{
+    color: darkslateblue;
+}
+
+.parent-heading .children-1 {
+    color: 
+red;
+}
+
+
+/* Reset margin được đặt mặc định : => bỏ những khoảng trắng ngoài ý muốn dung Reset CSS*/
+* {
+    margin: 0; /* Loại bỏ margin mặc định */
+    padding: 0; /* Loại bỏ padding mặc định */
+}
+/* thẻ cha của nó phải có kích thước cho width hoặc height thì thẻ con đặt theo % mới có tác dụng. */
+/* mặc định height: auto, chiều cao sẽ tự động thay đổi khi nội dung bên trong nó tăng lên. Nếu thẻ cha có height: auto và thẻ con của nó height: 50% thì sẽ không có tác dụng, khi ấy thẻ con vẫn có height: auto. */
+.box {
+    height: 50px;
+}
+
+.box1 {
+    width: 25%;
+    background-color: green;
+}
+
+.box2 {
+    width: 50%;
+    background-color: violet;
+}
+
+.box3 {
+    width: 75%;
+    background-color: brown;
+}
+
+.box4 {
+    width: 100%;
+    background-color: orange;
+}
+
+/* Các cách căn giữa trong CSS */

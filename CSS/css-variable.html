@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng biến trong CSS</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        /* Sử dụng biến trong CSS: (chỉ cần sửa code trong 1 cho (root) -> cac cho khac thay doi theo (h4,h5,h6) "ko can phai sua tung h4, h5,h6 */
+        /* Biến global */
+        :root {
+            --text-color: green;
+        }
+        h5 {
+            color: var(--text-color);
+        }
+
+        h6 {
+            color: var(--text-color);
+        }
+
+        h4 {
+            /* Biến local*/
+            --my-color1: darkslateblue;
+            color: var(--my-color1);
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <h1>Sử dụng biến trong CSS</h1>
+    <h4>Biến local</h4>
+    <h5>Biến global </h5>
+    <h6>...</h6>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS position relative</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+        /*Relative: Lấy chính nó làm tọa độ, không phụ thuộc vào thuộc tính bên ngoài (đè lên thuộc tính khác)  */
+        h2 {
+            position: relative;
+            /*h1-tọa độ góc */
+            top: 70px;
+            /*dè lên các ph tử khác di chuyển xuống dưới */
+        }
+
+        /* realtive + top: dè lên các ph tử khác h1  di chuyển xuống dưới  
+            margin-top: ko dè lên các ph tử khác, h1 va elemnet khac di chuyển xuống dưới cùng lúc*/
+
+        /* Absolute: Di chuyển vị trí đối tượng con trong đối tượng cha */
+        .box {
+            width: 500px;
+            height: 200px;
+            background-color: darkcyan;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 150px;
+            background-color: rgb(139, 0, 120);
+            position: relative;
+            /* tim thẻ cha: absolute lay thẻ gần nhất làm gốc tọa độ*/
+        }
+
+        .box-child {
+            width: 50px;
+            height: 50px;
+            background-color: darkorange;
+            position: absolute;
+            /* thẻ con (màu cam phụ thuộc màu tím, ko phụ thuộc màu xanh)*/
+            bottom: 0;
+            right: 0;
+        }
+
+        /* Absolute: Đối tượng phụ thuộc vào đối tượng khác
+            Fixed: Đối tượng phụ thuộc vào trình duyệt như menu header, thông tin footer */
+
+        /* CSS position fixed */
+        .header-fixed {
+            width: 100%;
+            height: 40px;
+            color: aliceblue;
+            font-size: 30px;
+            background-color: #000;
+            position: fixed;
+            top: 0;
+
+        }
+        /* CSS position sticky */
+        /* Fixed: Dính (header có thể dính sát với tab NỘI DUNG và TRÌNH DUYỆT)
+        Sticky: Bám dính (header có thể bám dính lên top) */
+        .header-sticky {
+            font-size: 30px;
+            color: aliceblue;
+            background-color: rgb(182, 0, 136);
+            margin-top: 50px;
+            position: sticky;
+            top:0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Fixed -->
+    <div class="header-sticky">Menu Sticky</div>
+    <!-- Fixed -->
+    <div class="header-fixed">Menu Fixed</div>
+
+    <h1>Position</h1>
+    <h2>Relative</h2>
+    <ul>
+        <li>Static (default)</li>
+        <li>Relative</li>
+        <li>Absolute</li>
+        <li>Fixed</li>
+        <li>Sticky</li>
+    </ul>
+
+    <!-- Absolute -->
+    <div class="box">
+        <div class="box2">
+            Relative
+            <div class="box-child">Absolute</div>
+        </div>
+    </div>
+
+    <div>
+        <img src="https://niithanoi.edu.vn/pic/News/css-nang-cao-advanced-positioning-dinh-vi-nang-cao.jpg" alt="">
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo classes trong CSS</title>
+    <style>
+        .box {
+            width: calc(80% + 50px);
+            height: 120px;
+            background: rgb(190, 124, 159);
+        }
+
+        /* Kich hoat khi di chuyen chuot */
+        h1:hover {
+            color: blue;
+        }
+
+        /* Bam giu chuot de kich hoat */
+        .box:active {
+            background-color: darkcyan;
+        }
+
+        /*  */
+        li:first-child {
+            color: darkcyan;
+        }
+
+        li:last-child {
+            color: darkcyan;
+        }
+
+        /* unvisited link */
+        a:link {
+            color: #FF0000;
+        }
+
+        /* visited link */
+        a:visited {
+            color: #00FF00;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> CSS pseudo-classes</h1>
+    <ul>
+        <li>:root</li>
+        <li>:hover</li>
+        <li>:active</li>
+        <li>:first-child</li>
+        <li>:last-child</li>
+    </ul>
+    <a href="https://www.w3schools.com/css/css_pseudo_classes.asp">This is a link</a>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Một số tricks và tips</title>
+    <style>
+        /* Cach 1 */
+        .box1{
+            background-color: darkorange;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;/*Set line-height = height chứa nó*/
+        }
+         /* Cach 2:Canh giữa được nhiều item  */
+        .box2{
+            background-color: rgb(72, 189, 4);
+            height: 100px;
+            display: flex;
+        }
+        h3{
+            margin: auto;
+        }
+        /* Cach 3 */
+        .box3{
+            background-color: rgb(211, 9, 9);
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;/* center, space-between,space-around */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"><h3>Các cách căn giữa trong CSS cách 1</h3></div>
+    <div class="box2">
+        <h3>Các cách căn giữa trong CSS cách 2</h3>
+        <h3>Các cách căn giữa trong CSS cách 2</h3>
+    </div>
+    <div class="box3">
+        <h3>Các cách căn giữa trong CSS cách 3</h3>
+        <h3>Các cách căn giữa trong CSS cách 3</h3>
+    </div>
+
+
+    <h2>Hiển thị ảnh dự phòng khi ảnh chính lỗi</h2>
+    <img  onerror="this.src='/img/placehoderImg.png'" src="https://nld.mediacdn.vn/2019/7/28/anh-chot-3-1564321423972329966976.jpg" alt=""  width="500px" height="500px" >
+  
+</body>
+</html>
+

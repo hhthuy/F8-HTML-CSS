@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Helvetica Neue";
+    background-color: #f4f4f5;
+  }
+  
+  body > div {
+    margin: auto;
+  }
+
+  /* block */
+.btn{
+    display: inline-block;/* loai bo mac dinh the div theo chieu doc thanh ngang */
+    text-decoration: none;/* vien */
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 12px 38px;
+    border-radius: 50px;
+    min-width: 120px;
+    /* Enabled: Pointer, hover effect*/
+    cursor: pointer;
+    transform: opacity 0.2s ease;
+    
+
+
+
+}
+/* css btn dung canh btn phia sau*/
+.btn + .btn{
+    margin-left: 16px; /* btn phia sau (btn--warn, btn--danger) */
+}
+.btn--success {
+    background-color: #71be34;
+}
+  
+.btn--warn {
+    background-color: #ffb702;
+  }
+  
+.btn--danger {
+    background-color: #ff623d;
+  }
+
+/* Enabled */
+.btn:hover{
+    opacity: 0.8;
+}
+/* Disabled */
+.btn--disabled{
+  opacity: 0.5 !important;/* !important lam mat opacity cua 0.8, giu nguyen 0.5*/
+  cursor: default;/* bo pointer */
+  
+}
+  
+/* size: padding: 12px 38px;*/
+.btn--size-l{
+  padding: 16px 56px;
+}
+.btn--size-m{
+  padding: 8px 32px;
+}

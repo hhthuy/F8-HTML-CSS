@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32- Các đơn vị trong CSS</title>
+    <style>
+        /* px: Kích thước cố định */
+        .unit-box1{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            color: aliceblue;
+        }
+        p{
+            font-size: 30px;
+            color: brown;
+        }
+        /* %: phụ thuộc vào thẻ chứa nó (Kích thước KO cố định)*/
+        .unit-box2{
+            width: 50%;
+            height: 100px;
+            background-color: brown;
+            color: aliceblue;
+        }
+        /* rem: phụ thuộc vào thuộc tính được đinh nghĩa thẻ  html (Kích thước KO cố định)*/
+        html{
+            font-size: 40px;
+        }
+        .text-box3{
+            font-size: 2rem;
+        }
+        /* em: phụ thuộc vào đinh nghĩa thẻ  cha chua no(Kích thước KO cố định)*/
+        .text-box4{
+            font-size: 50em;
+        }
+        /* vh, vw: phụ thuộc vào kích thước trình duyệt*/
+        .unit-box4{
+            width: 100vw;
+            height: 20vh;
+            background-color: chocolate;
+            color: aliceblue;
+        }
+        /* 100% width, 20% height with browser  */
+    </style>
+</head>
+<body>
+   <div>
+       <h2>CSS unit?</h2>
+       <h3>1. Absolute units? </h3><!-- Tăng trình duyệt -> Kích thước THAY ĐỔI -->
+       <p>Kích thước cố định (Không bị thay đổi khi các yếu tố khác xung quanh tác động như trình duyệt thay đổi)</p>
+       <ul>
+           <li>px</li>
+           <li>pt</li>
+           <li>cm</li>
+           <li>mm</li>
+           <li>inch</li>
+           <li>pc</li>
+       </ul>
+       <h3>Relative units?</h3><!-- Tăng trình duyệt -> Kích thước KO THAY ĐỔI-->
+       <ul>
+           <li>% (phụ thuộc vào thẻ chứa nó)</li>
+           <li>rem (=16px, phụ thuộc vào thẻ html)</li>
+           <li>em (phụ thuộc vào thẻ gần nhất chứa nó)</li>
+           <li>vw (viewport - width: Chiều ngang của trình duyệt)</li>
+           <li>vh (viewport - height: Chiều dọc của trình duyệt)</li>
+           <li>vmin</li>
+           <li>vmax</li>
+           <li>ex</li>
+           <li>ch</li>
+       </ul>
+   </div>  
+   <h2>Absolute units? (px)</h2>
+   <div class="unit-box1"> 
+       px: định nghĩa cho 1 khối
+       width: 100px;
+       height: 100px;
+    </div>
+    <p>px: định nghĩa cho 1 chữ </p>
+
+    <h2>Relative units? (%)</h2>
+   <div class="unit-box2"> 
+       width: 50%;
+       height: 100px;
+    </div>
+
+    <h2 >Relative units? (rem)</h2>
+    <h2>h2 (default:60px) </h2>
+    <p class="text-box3">rem (40px * 2 rem = 80px)</p>
+  
+    <h2 >Relative units? (em)</h2>
+    <!--thẻ gần nhất chứa <p> có font-size là <div class="text-box4"> =>lấy font-size  -->
+    <div class="text-box4">
+        <div>
+            <p>em</p>
+        </div>
+    </div>
+
+    <h2>Relative units? (vw, vh)</h2>
+   <div class="unit-box4"> 
+      100% width, 20% height with browser  
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40 - Một số hàm trong CSS</title>
+    <style>
+        .box {
+            width: calc(100% / 2);
+            height: 120px;
+            background: rgb(190, 124, 159);
+            color: aliceblue;
+        }
+
+        a::after {
+            content: "(" attr(href) ")";
+        }
+
+        .box::after {
+            content: attr(title-box);
+        }
+
+        /* var()*/
+        :root {
+            --heading-color: #f12626;
+            --text-color: #4b0cb1;
+        }
+
+        /* Thẻ h1 có màu lấy từ biến --heading-color */
+        h1 {
+            color: var(--heading-color);
+        }
+
+        /* Thẻ p có màu lấy từ biến --text-color */
+        p {
+            color: var(--text-color);
+        }
+
+        /* rgba() => Red, Green, Blue, Alpha*/
+        .box-1 {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+        }
+
+        .box-2 {
+            width: 50%;
+            height: 50%;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Một số hàm trong CSS</h1>
+    <ul>
+        <li>var()</li>
+        <li>linear-gradient()</li>
+        <li>rgba()</li>
+        <li>rgb()</li>
+        <li>calc()</li>
+        <li>attr()</li>
+    </ul>
+    <div class="box">hàm calc()</div>
+
+    
+    <!-- <a href="https://fullstack.edu.vn">Hoc lap trinh (https://fullstack.edu.vn)</a><br> -->
+    <a href="https://fullstack.edu.vn">Hoc lap trinh</a>
+    <div class="box" title-box="Demo attr()"></div>
+
+    <br>
+    <div class="box-1">
+        <div class="box-2">Ham rgba()</div>
+    </div>
+    
+    <h1></h1>
+</body>
+
+</html>

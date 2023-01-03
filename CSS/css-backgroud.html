@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuộc tính tạo nền</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+
+        /* background-image */
+        .bg-img1 {
+            width: 500px;
+            height: 700px;
+            background-image:
+                url(https://www.freepnglogos.com/uploads/star-png/star-vector-png-transparent-image-pngpix-21.png),
+                url(https://tackexinh.com/wp-content/uploads/2021/01/hinh-anh-dep-chat-luong-001.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .bg-img2 {
+            height: 200px;
+            background-image:
+                linear-gradient(90deg, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5)),
+                url(https://fullstack.edu.vn/assets/images/f8_avatar.png);
+            background-size: 150px;
+            background-repeat: no-repeat;
+            /*repeat-y repeat-x  */
+        }
+
+        /* background-size với cover, contain */
+        /*
+            background-size: 100px => ngang:100px, doc: auto  
+            background-size: contain => doc: 100% (hinh anh ko bi che khuat-co khoang trang)
+             background-size: cover => doc: 100%(che mat hinh anh-ko co khoang trang)
+            */
+        .bg-size {
+            width: 500px;
+            height: 500px;
+            background-image:
+                url(https://i.doanhnhansaigon.vn/2020/04/29/thumbnailsaigon-1588134021_750x0.jpg);
+            background-size: cover;
+            /* 100%, contain, cover */
+            background-repeat: no-repeat;
+            border: 10px solid rgb(26, 23, 228);
+            padding: 10px;
+            box-sizing: content-box;
+            background-origin: padding-box;
+            /* padding-box,border-box ,content-box, */
+        }
+
+        /* background-origin */
+        .bg-origin {
+            width: 500px;
+            height: 500px;
+            background-image: url(https://fullstack.edu.vn/assets/images/f8_avatar.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            border: 20px dashed purple;
+            padding: 20px;
+            
+            box-sizing: border-box;
+            background-origin: border-box;
+
+        }
+
+        /* background-position */
+        .bg-position {
+            width: 400px;
+            height: 400px;
+            background-image:
+                linear-gradient(90deg, rgba(255, 255, 0, 0.5), rgba(0, 0, 255, 0.5)),
+                url(https://i.doanhnhansaigon.vn/2020/04/29/thumbnailsaigon-1588134021_750x0.jpg);
+            background-size: 300px;/* cover || contain  */
+            background-repeat: no-repeat;
+            border: 10px solid rgb(68, 128, 0);
+
+            background-position: bottom right;
+            /* background-position:top 50px right 10px; / 30px 80px: x, y */
+
+        }
+        
+
+        /* "shorthand" cho background */
+        .shorthand {
+
+            width: 400px;
+            height: 400px;
+            background:
+                url(https://image.thanhnien.vn/w1024/Uploaded/2022/lxwpcqjwp/2020_04_08/anh2_agxp.jpg) no-repeat center / contain;
+
+        }
+
+        /* BT */
+        .box {
+            height: 500px;
+            width: 500px;
+            background-image:
+            url(https://www.freepnglogos.com/uploads/star-png/star-vector-png-transparent-image-pngpix-21.png),
+                linear-gradient(90deg, rgba(255, 255, 0, 0.5), rgba(255, 0, 221, 1)),
+                url(https://fullstack.edu.vn/assets/images/f8_avatar.png);
+            background-size: 150px;/* 150px || cover || contain */
+            background-repeat: no-repeat;/*Lặp lại: no-repeat|| repeat-y || repeat-x */
+            border: 20px dashed rgb(68, 128, 0); /* solid || dashed ... */
+            background-position: bottom right;/* top 50px right 10px; || 30px 80px =>x,y  */
+            box-sizing: border-box;/* padding-box || border-box||content-box, */
+            background-origin: border-box;/* padding-box || border-box||content-box, */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Background Attribute</h1>
+    <ul>
+        <li>background-image</li>
+        <li>background-size</li>
+        <li>background-origin</li>
+        <li>background-position</li>
+    </ul>
+    <div class="bg-img1">background-image (img-img)</div>
+    <div class="bg-img2">background-image (img-rgba)</div>
+    <div class="bg-size">background-size</div>
+    <div class="bg-origin">background-origin</div>
+    <div class="bg-position">background-position</div>
+    <div class="shorthand">Cú pháp "shorthand" cho background</div>
+
+    <!-- BT -->
+    <div class="box"></div>
+
+    
+</body>
+
+
+
+</html>
