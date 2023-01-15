@@ -1,0 +1,262 @@
+/* File base.css: code css cau hinh thanh phan chung *
+*/
+/* =======Dựng base CSS======= */
+/* Khai báo biến CSS */
+:root{
+    --primary-color: #ee4b2b;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+
+    --header-height: 120px;
+    --navbar-height:34px;
+    --header-search-height:calc(var(--header-height) - var(--navbar-height));
+
+    -star-gold:#ffce3d;
+}
+/* Áp dụng tất cả thuộc tính CSS lên phần tử HTML đc nhúng file base.css */
+*{
+    box-sizing: inherit; /*kế thừa từ thẻ chứa nó có thuộc tính là box-sizing*/
+}
+
+html{
+    font-size: 62.5%;/* 1rem = 16px(100%) => HACK: 100%:16px = 62.5% => 1 rem = 10px => p{1.2 rem = 12px }*/
+    line-height: 1.6rem;/* chiều cao của mỗi dòng chữ */
+    font-family: 'Roboto', sans-serif;/* https://fonts.google.com/specimen/Roboto?query=Christian+Robertson&preview.text=Roboto&preview.text_type=custom */
+    box-sizing: border-box;/*kế thừa cac thuộc tính box-sizing: border-box*/
+}
+/* Responsive */
+/* Grid > Row > Column */
+.grid{
+    width: 1200px;/* PC có kích thước > 1200px thì width tối đa của .grid chỉ 1200px */
+    max-width: 100%;/* < 1200px thì max-width giảm kích thước của .grid = 1200px */
+    margin: 0 auto;/* Tự động căn giữa khối này khi nằm trong khối khác */
+}
+
+.grid__full-width{
+    width: 100%;/* Sd .grid__full-width khi không muốn width: 1200px */
+}
+.grid__row{
+    display: flex;/* Những thẻ trong(.grid__row) nằm 1 hàng ngang */
+    flex-wrap: wrap;/* chiều ngang vượt quá thì nhảy xuống hàng */
+    margin-left:-5px;/* Danh mục: Base responsive */
+    margin-right: -5px;/* Danh mục: Base responsive */
+}
+
+/* =====Test - Danh mục: Base responsive===== */
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;/* 1 colum = 8.333% (x 2 = 16.666%)*/
+}
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;/* 1 colum = 8.333% (x 10 = 83.3334%) */
+}
+/* =====Sản phẩm CSS===== */
+/*  12cột/5sp -> mỗi sp chiếm 2.4 cột, 
+    100%/5sp là mỗi sp 20% ( 100% này cụ thể là 83,333% của col 10)*/
+.grid__column-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+    /* fadeIn: Hiện dần lên*/
+    /* Header QR code CSS*/
+    from{
+        opacity: 0;/* ẩn đi */
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* =====Base modal =====*/
+.modal{
+    /* Modal chiếm hết màn hình */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;/* căn giữa */
+    
+}
+.modal__overlay{
+    position: absolute;/* con của .modal */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.modal__body{
+    /* width: 300px;
+    height: 300px; */
+    background-color: var(--white-color);
+    margin: auto;/* căn giữa */
+    position: relative; /* form(modal__body) nằm trên modal__overlay */
+    z-index: 1; /* do <div class="modal__overlay"> và <div class="modal__body"> cùng cấp -> thẻ nào sau thì hiện lên trước(z-index:0) -> SD z-index z-index cao nhat thi ro nhat*/
+    /* border-radius: 5px; */
+}
+
+/* -=====CSS form đăng ký===== */
+/* Button style */
+.btn {
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 8px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    /* can giua */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    line-height: 1.6rem;
+}
+.btn.btn--normal:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+.btn.btn--primary{
+    /* Selct toi the phai co 2 class */
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.btn.btn--disabled{
+    color: #949494;
+    cursor: default;
+    background-color: #c3c3c3;
+}
+.btn.btn--size-s{
+    height: 32px;
+    line-height: 12px;
+    padding: 0 8px;
+}
+
+/* =====Modal animation=====*/
+/* Form modal Javascript logic */
+.modal{
+    position: fixed;
+    top: 0; right: 0;  left: 0; bottom: 0;
+    display: none;
+    animation: fadeIn linear 0.1s;
+  }
+.open{
+    display: flex;
+}
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal__body{
+    --growth-from: 0.7;
+    --growth-to:1;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    animation: growth linear 0.1s;
+}
+@keyframes growth {
+    from{
+        opacity: 0;
+        transform: scale(var(--growth-from));
+    }
+    to{
+        opacity: 1;/* ro dan */
+        transform: scale(var(--growth-to));
+    }
+}
+/* ======CSS: Sắp xếp sản phẩm===== */
+/* Selection */
+.select-input{
+    min-width: 200px;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;/* can giua chieu cao */
+    position: relative;/* list option */
+}
+.select-input___label{
+    font-size: 1.4rem;
+}
+.select-input___icon{
+    font-size: 1.4rem;
+    color: rgb(131, 131, 131);
+    position: relative;
+    top: 1px;
+}
+.select-input:hover .select-input__list{
+    /* Hover select-input thi hien ra select-input__list*/
+    display: block;/* Hover: Hien*/
+}
+.select-input__list{
+    position: absolute; /* list option */
+    left: 0;
+    right: 0;
+    top: 100%;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding: 8px 16px; 
+    list-style: none;/* bo cham tron <a>*/
+    display: none;/* Hover: An*/
+    z-index: 1;
+}
+.select-input__link{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;/* bo dau gach chan <a> */
+    display: block;/* block */
+    padding: 4px 0;/* block */
+}
+.select-input__link:hover{
+    color: var(--primary-color);
+}
+/* =====Pagination UI===== */
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none
+}
+.pagination-item{
+    margin: 0 12px;
+}
+.pagination-item--active .pagination-item__link{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.pagination-item--active .pagination-item__link:hover{
+    background-color: #ed5c3f;
+}
+.pagination-item__link{
+    --height:30px;
+    display: block; /* <a> Co display: block; moi dat dc chieu ngang */
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #939393;
+    min-width: 40px;
+    height: var(--height);
+    line-height: var(--height);/* text Can giua chieu doc = chiue cao cua no*/
+    text-align: center;/* text Can giua chieu ngang */
+    border-radius: 2px;
+}
+.pagination-item-icon{
+    
+}
